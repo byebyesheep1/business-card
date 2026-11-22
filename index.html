@@ -8,48 +8,79 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-    background: #f4f5f7;
+    background: #f0f1f3;
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
     padding: 20px;
   }
-  .card {
-    background: #fff; width: 100%; max-width: 380px;
-    border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,.1);
-    padding: 36px 28px; text-align: center;
+  .wrap {
+    background: #fff; width: 100%; max-width: 400px;
+    border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.08);
+    padding: 34px 30px 28px; text-align: center;
   }
-  .avatar {
-    width: 88px; height: 88px; border-radius: 50%;
-    background: #4a6cf7; color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 34px; font-weight: 600; margin: 0 auto 16px;
+  h1 { font-size: 26px; color: #1a1a1a; letter-spacing: 1px; }
+
+  /* 名片本体 */
+  .biz {
+    position: relative;
+    margin: 24px 0 26px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
+    padding: 26px 24px 30px;
+    overflow: hidden;
+    text-align: left;
   }
-  h1 { font-size: 26px; color: #222; letter-spacing: 1px; }
-  .role { font-size: 15px; color: #777; margin-top: 8px; }
-  .info { margin: 26px 0; text-align: left; }
-  .row {
-    display: flex; padding: 11px 0;
-    border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333;
+  /* 红色斜角装饰 */
+  .biz::before {
+    content: ""; position: absolute; right: -40px; bottom: -60px;
+    width: 200px; height: 140px;
+    background: #c0392b;
+    transform: skewY(-18deg);
+    opacity: .92;
   }
-  .row span:first-child { width: 70px; color: #999; font-size: 13px; }
-  .row a { color: #4a6cf7; text-decoration: none; word-break: break-all; }
+  .biz::after {
+    content: ""; position: absolute; right: -70px; bottom: 30px;
+    width: 180px; height: 26px;
+    background: #e8e8e8;
+    transform: skewY(-18deg);
+  }
+  .name { font-size: 24px; font-weight: 700; color: #c0392b; position: relative; z-index: 2; }
+  .role { font-size: 15px; color: #555; margin-top: 4px; position: relative; z-index: 2; }
+  .details { margin-top: 22px; position: relative; z-index: 2; }
+  .line {
+    display: flex; align-items: center; gap: 9px;
+    font-size: 13.5px; color: #333; margin-bottom: 9px;
+  }
+  .line a { color: #333; text-decoration: none; word-break: break-all; }
+  .ico {
+    width: 17px; height: 17px; flex-shrink: 0;
+    background: #c0392b; border-radius: 3px;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 10px; font-weight: 700;
+  }
+
   .btn {
-    display: block; background: #4a6cf7; color: #fff;
-    padding: 13px; border-radius: 8px;
-    text-decoration: none; font-size: 15px; font-weight: 600;
+    display: inline-block; background: #6c6ce0; color: #fff;
+    padding: 11px 26px; border-radius: 6px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
   }
-  footer { margin-top: 16px; font-size: 12px; color: #aaa; }
+  footer { margin-top: 14px; font-size: 12px; color: #999; }
 </style>
 </head>
 <body>
-  <div class="card">
-    <div class="avatar">K</div>
-    <h1>Kairos</h1>
-    <p class="role">Video Editor</p>
-    <div class="info">
-      <div class="row"><span>Email</span><a href="mailto:byebyesheep1@gmail.com">byebyesheep1@gmail.com</a></div>
-      <div class="row"><span>Phone</span><a href="tel:+8618516550743">+86 185 1655 0743</a></div>
+  <div class="wrap">
+    <h1>KAIROS</h1>
+
+    <div class="biz">
+      <div class="name">Kairos</div>
+      <div class="role">Video Editor</div>
+      <div class="details">
+        <div class="line"><span class="ico">☎</span><a href="tel:+8618516550743">+86 185 1655 0743</a></div>
+        <div class="line"><span class="ico">@</span><a href="mailto:byebyesheep1@gmail.com">byebyesheep1@gmail.com</a></div>
+      </div>
     </div>
+
     <a class="btn" href="vcard.vcf" download>Download Business Card</a>
     <footer>Keep Contact!</footer>
   </div>
