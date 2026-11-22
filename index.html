@@ -1,102 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    
-    .container {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      max-width: 600px;
-      text-align: center;
-    }
-    
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-    
-    .business-card {
-      margin: 20px 0;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .business-card img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    .download-btn {
-      background-color: #4a6ee0;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background-color 0.3s;
-    }
-    
-    .download-btn:hover {
-      background-color: #3a5bc7;
-    }
-    
-    .instructions {
-      margin-top: 30px;
-      color: #666;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos | Video Editor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background: #f4f5f7;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #fff; width: 100%; max-width: 380px;
+    border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,.1);
+    padding: 36px 28px; text-align: center;
+  }
+  .avatar {
+    width: 88px; height: 88px; border-radius: 50%;
+    background: #4a6cf7; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px; font-weight: 600; margin: 0 auto 16px;
+  }
+  h1 { font-size: 26px; color: #222; letter-spacing: 1px; }
+  .role { font-size: 15px; color: #777; margin-top: 8px; }
+  .info { margin: 26px 0; text-align: left; }
+  .row {
+    display: flex; padding: 11px 0;
+    border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333;
+  }
+  .row span:first-child { width: 70px; color: #999; font-size: 13px; }
+  .row a { color: #4a6cf7; text-decoration: none; word-break: break-all; }
+  .btn {
+    display: block; background: #4a6cf7; color: #fff;
+    padding: 13px; border-radius: 8px;
+    text-decoration: none; font-size: 15px; font-weight: 600;
+  }
+  footer { margin-top: 16px; font-size: 12px; color: #aaa; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>KEN CHAN</h1>
-    
-    <div class="business-card">
-      <!-- Replace "business-card.png" with your actual image filename -->
-      < img src="business-card.png" alt="Business Card">
+  <div class="card">
+    <div class="avatar">K</div>
+    <h1>Kairos</h1>
+    <p class="role">Video Editor</p>
+    <div class="info">
+      <div class="row"><span>Email</span><a href="mailto:byebyesheep1@gmail.com">byebyesheep1@gmail.com</a></div>
+      <div class="row"><span>Phone</span><a href="tel:+8618516550743">+86 185 1655 0743</a></div>
     </div>
-    
-    <button class="download-btn" onclick="downloadCard()">Download Business Card</button>
-    
-    <div class="instructions">
-      <p>Keep Contact!</p >
-    </div>
+    <a class="btn" href="vcard.vcf" download>Download Business Card</a>
+    <footer>Keep Contact!</footer>
   </div>
-
-  <script>
-    function downloadCard() {
-      // Create a temporary link element
-      const link = document.createElement('a');
-      
-      // Replace "business-card.png" with your actual image filename
-      link.href = 'business-card.png';
-      link.download = 'business-card.png';
-      
-      // Append to the document, click it, and remove it
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  </script>
 </body>
 </html>
